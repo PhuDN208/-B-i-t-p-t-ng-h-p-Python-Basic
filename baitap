@@ -8,15 +8,7 @@ cost = float(input("Nhập chi phí khám: "))
 print("---Thẻ bệnh nhân---")
 import random
 
-def random_numbers_without_repetition(start: int, end: int, count: int) -> list[int]:
-    if start > end:
-        raise ValueError("start must be less than or equal to end")
-    if count < 0 or count > end - start + 1:
-        raise ValueError("count must fit within the number range")
-
-    return random.sample(range(start, end + 1), count)
-
-so_ngau_nhien = random_numbers_without_repetition(100, 999, 1)[0]
+so_ngau_nhien = random.randint(100, 999)
 ma_bn = f"BN{date_of_birth}{so_ngau_nhien}"
 print("Mã BN      : " + str(ma_bn) + "\n")
 print("Tên        : " + name)
