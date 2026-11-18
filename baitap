@@ -1,0 +1,28 @@
+name = input("Nhập tên bệnh nhân: ") 
+sex = input("Nhập giới tính: ")
+date_of_birth = int(input("Nhập năm sinh: "))
+phone = input("Nhập số điện thoại: ")
+email = input("Nhập email: ")
+symptoms = input("Nhập triệu chứng ban đầu: ")
+cost = float(input("Nhập chi phí khám: "))
+print("---Thẻ bệnh nhân---")
+import random
+
+def random_numbers_without_repetition(start: int, end: int, count: int) -> list[int]:
+    if start > end:
+        raise ValueError("start must be less than or equal to end")
+    if count < 0 or count > end - start + 1:
+        raise ValueError("count must fit within the number range")
+
+    return random.sample(range(start, end + 1), count)
+
+so_ngau_nhien = random_numbers_without_repetition(100, 999, 1)[0]
+ma_bn = f"BN{date_of_birth}{so_ngau_nhien}"
+print("Mã BN      : " + str(ma_bn) + "\n")
+print("Tên        : " + name)
+print("Giới tính  : " + sex)
+print("Năm sinh   : " + str(int(date_of_birth)))
+print("Điện thoại : " + phone)
+print("Email      : " + email)
+print("Triệu chứng: " + symptoms)
+print("Chi phí    : " + str(float(cost)))
